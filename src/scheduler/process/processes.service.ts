@@ -4,7 +4,6 @@ import { processes, parameters } from './processes.data';
 
 @Injectable()
 export class ProcessesService {
-
   getProcess(processId: string) {
     return processes.find(process => process.processID === processId);
   }
@@ -18,9 +17,8 @@ export class ProcessesService {
   filterProcesses(label: string) {
     const filter = label.toLowerCase().trim();
 
-    const filteredProcesses = processes.filter(process =>
-      process.description.toLowerCase().includes(filter) ||
-      process.processID.toLowerCase().includes(filter)
+    const filteredProcesses = processes.filter(
+      process => process.description.toLowerCase().includes(filter) || process.processID.toLowerCase().includes(filter)
     );
 
     return {
@@ -33,5 +31,4 @@ export class ProcessesService {
       items: parameters[processId]
     };
   }
-
 }

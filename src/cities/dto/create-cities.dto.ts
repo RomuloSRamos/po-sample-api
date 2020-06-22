@@ -1,7 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateCitiesDto {
-
   @ApiPropertyOptional()
   uf: string;
 
@@ -13,5 +12,4 @@ export class CreateCitiesDto {
 
   @ApiPropertyOptional()
   name: string;
-
 }

@@ -1,7 +1,6 @@
-import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class SaveFavoriteDto {
-
   @ApiProperty()
   readonly isFavorite: boolean;
 
@@ -10,5 +9,4 @@ export class SaveFavoriteDto {
 
   @ApiPropertyOptional()
   readonly params?: string;
-
 }

@@ -3,7 +3,6 @@ import { states, saoPauloCities, santaCatarinaCities, paranaCities } from './sam
 
 @Injectable()
 export class SampleSelectService {
-
   getStates() {
     return {
       hasNext: false,
@@ -15,14 +14,14 @@ export class SampleSelectService {
     let cities;
     switch (state) {
       case 'sp':
-      cities = saoPauloCities;
-      break;
+        cities = saoPauloCities;
+        break;
       case 'sc':
-      cities = santaCatarinaCities;
-      break;
+        cities = santaCatarinaCities;
+        break;
       case 'pr':
-      cities = paranaCities;
-      break;
+        cities = paranaCities;
+        break;
     }
 
     return {
@@ -30,5 +29,4 @@ export class SampleSelectService {
       items: cities
     };
   }
-
 }

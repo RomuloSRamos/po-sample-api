@@ -1,7 +1,6 @@
 import { ApiPropertyOptional, ApiProperty } from '@nestjs/swagger';
 
 export class CreateParameterDto {
-
   @ApiPropertyOptional()
   columns: Array<any>;
 
@@ -12,7 +11,7 @@ export class CreateParameterDto {
   optional: boolean;
 
   @ApiPropertyOptional()
-  options: Array<{ label: string, value: string | number }>;
+  options: Array<{ label: string; value: string | number }>;
 
   @ApiPropertyOptional()
   optionsMulti: boolean;
@@ -97,5 +96,4 @@ export class CreateParameterDto {
 
   @ApiPropertyOptional()
   type: string;
-
 }

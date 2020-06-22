@@ -1,7 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreatePeopleDto {
-
   @ApiPropertyOptional()
   id: string;
 
@@ -64,5 +63,4 @@ export class CreatePeopleDto {
 
   @ApiPropertyOptional()
   dependents: Array<any>;
-
 }

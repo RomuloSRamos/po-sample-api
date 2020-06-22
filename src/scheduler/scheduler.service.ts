@@ -5,9 +5,7 @@ import { CreateSchedulerDto } from './dto/create-scheduler.dto';
 
 @Injectable()
 export class SchedulerService {
-
   createScheduler(scheduler: CreateSchedulerDto) {
     schedules.push(scheduler);
   }
-
 }

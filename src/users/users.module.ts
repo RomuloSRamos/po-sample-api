@@ -7,6 +7,6 @@ import { AuthenticationService } from './authentication.service';
 @Module({
   imports: [],
   controllers: [UsersController],
-  providers: [AuthenticationService, PasswordRecoveryService],
+  providers: [AuthenticationService, PasswordRecoveryService]
 })
 export class UsersModule {}

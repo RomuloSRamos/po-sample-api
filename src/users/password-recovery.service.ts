@@ -12,7 +12,6 @@ import {
 
 @Injectable()
 export class PasswordRecoveryService {
-
   smsType = 'sms';
   emailType = 'email';
 

@@ -7,8 +7,7 @@ import { GetCitiesDto } from './dto/get-cities.dto';
 @ApiTags('sampleSelect')
 @Controller('sampleSelect')
 export class SampleSelectController {
-
-  constructor(private readonly sampleSelectService: SampleSelectService) { }
+  constructor(private readonly sampleSelectService: SampleSelectService) {}
 
   @ApiResponse({ status: 404, description: 'State search service unavailable' })
   @ApiResponse({ status: 200, type: GetStatesDto })
@@ -26,7 +25,6 @@ export class SampleSelectController {
 
   @Get('/:state')
   test(@Param('state') state, @Res() res) {
-  return res.sendFile(state, { root: 'public/assets' });
+    return res.sendFile(state, { root: 'public/assets' });
   }
-
 }

@@ -5,7 +5,6 @@ import { Menu } from './menu.interface';
 
 @Injectable()
 export class MenusService {
-
   getMenus(search: string, department: string): Promise<any> {
     const hasFilter = search || department;
 
@@ -15,20 +14,21 @@ export class MenusService {
   }
 
   filterMenus(search: string, department: string) {
-
     const response = {
-      items: menus.filter(menu =>
-        this.includesMenuFilter(menu, 'label', search) ||
-        this.includesMenuFilter(menu, 'department', department))
+      items: menus.filter(
+        menu =>
+          this.includesMenuFilter(menu, 'label', search) || this.includesMenuFilter(menu, 'department', department)
+      )
     };
 
     return response;
   }
 
   includesMenuFilter(menu: Menu, property: string, filter: string): boolean {
-    if (!filter) { return; }
+    if (!filter) {
+      return;
+    }
 
     return menu[property].toLocaleLowerCase().includes(filter.toLocaleLowerCase());
   }
-
 }

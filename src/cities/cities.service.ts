@@ -4,13 +4,13 @@ import { cities } from './db/cities.data';
 
 @Injectable()
 export class CitiesService {
-
   getCities(transform?: string, filter?: string) {
     const filteredCities = filter ? this.filter(filter) : cities;
 
-    const items = transform === 'true' ?
-      filteredCities.map(this.transformCitiesWithOptions) :
-      filteredCities.map(this.getCitiesWithPropertiesDefault);
+    const items =
+      transform === 'true'
+        ? filteredCities.map(this.transformCitiesWithOptions)
+        : filteredCities.map(this.getCitiesWithPropertiesDefault);
 
     return {
       hasNext: false,
@@ -40,5 +40,4 @@ export class CitiesService {
       label: city.name
     };
   }
-
 }

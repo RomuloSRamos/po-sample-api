@@ -8,13 +8,12 @@ import { GetPeopleDto } from './dto/get-people.dto';
 @ApiTags('people')
 @Controller('people')
 export class PeopleController {
-
   constructor(private peopleService: PeopleService) {}
 
   @ApiResponse({ status: 200, type: GetPeopleDto })
-  @ApiQuery({name: 'search', required: false})
-  @ApiQuery({name: 'page', required: false})
-  @ApiQuery({name: 'pageSize', required: false})
+  @ApiQuery({ name: 'search', required: false })
+  @ApiQuery({ name: 'page', required: false })
+  @ApiQuery({ name: 'pageSize', required: false })
   @Get()
   getPeople(@Query() query) {
     const { search, page, pageSize } = query;
@@ -56,5 +55,4 @@ export class PeopleController {
   update(@Body() person, @Param() param) {
     this.peopleService.update(param['id'], person);
   }
-
 }

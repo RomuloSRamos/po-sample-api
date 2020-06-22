@@ -9,16 +9,13 @@ import { CreateParameterDto } from './dto/create-parameter.dto';
 @ApiTags('processes')
 @Controller('scheduler/processes')
 export class ProcessesController {
-
   constructor(private processService: ProcessesService) {}
 
   @ApiResponse({ status: 200, type: GetProcessesDto })
   @ApiQuery({ name: 'search', required: false })
   @Get()
   getProcesses(@Query() query) {
-    return query['search'] ?
-      this.processService.filterProcesses(query['search'])
-      : this.processService.getProcesses();
+    return query['search'] ? this.processService.filterProcesses(query['search']) : this.processService.getProcesses();
   }
 
   @ApiResponse({ status: 200, type: CreateProcessDto })
@@ -34,5 +31,4 @@ export class ProcessesController {
   getParametersByProcesses(@Param() params) {
     return this.processService.getParametersByProcess(params['id']);
   }
-
 }

@@ -7,7 +7,6 @@ import { CreateSchedulerDto } from './dto/create-scheduler.dto';
 @ApiTags('scheduler')
 @Controller('scheduler')
 export class SchedulerController {
-
   constructor(private schedulerService: SchedulerService) {}
 
   @ApiBody({ type: CreateSchedulerDto })
@@ -15,5 +14,4 @@ export class SchedulerController {
   createScheduler(@Body() newScheduler: CreateSchedulerDto) {
     this.schedulerService.createScheduler(newScheduler);
   }
-
 }

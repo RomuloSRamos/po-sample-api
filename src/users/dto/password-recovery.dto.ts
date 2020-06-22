@@ -1,7 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class PasswordRecoveryDto {
-
   @ApiPropertyOptional()
   sms: string;
 

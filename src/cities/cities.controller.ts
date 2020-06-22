@@ -7,7 +7,6 @@ import { GetCitiesDto } from './dto/get-cities.dto';
 @ApiTags('cities')
 @Controller('cities')
 export class CitiesController {
-
   constructor(private citiesService: CitiesService) {}
 
   @ApiResponse({ status: 200, type: GetCitiesDto })
@@ -18,5 +17,4 @@ export class CitiesController {
     const { transform, filter } = query;
     return this.citiesService.getCities(transform, filter);
   }
-
 }

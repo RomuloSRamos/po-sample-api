@@ -3,7 +3,6 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { MetadataType } from '../metadata-type.enum';
 
 export class GetMetadataDto {
-
   @ApiPropertyOptional({ enum: ['create', 'list', 'detail', 'edit'] })
   type: MetadataType;
 
@@ -24,5 +23,4 @@ export class GetMetadataDto {
 
   @ApiPropertyOptional()
   title: string;
-
 }

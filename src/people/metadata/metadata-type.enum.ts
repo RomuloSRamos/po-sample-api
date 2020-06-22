@@ -1,5 +1,4 @@
 export enum MetadataType {
-
   'create',
 
   'list',
@@ -7,5 +6,4 @@ export enum MetadataType {
   'detail',
 
   'edit'
-
 }

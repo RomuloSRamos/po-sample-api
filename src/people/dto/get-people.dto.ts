@@ -3,10 +3,8 @@ import { ApiProperty } from '@nestjs/swagger';
 import { CreatePeopleDto } from './create-people.dto';
 
 export class GetPeopleDto {
-
   @ApiProperty({
-    type: () => [CreatePeopleDto],
+    type: () => [CreatePeopleDto]
   })
   items: Array<CreatePeopleDto>;
-
 }

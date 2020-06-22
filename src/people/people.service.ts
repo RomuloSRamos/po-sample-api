@@ -6,16 +6,15 @@ import { Utils } from 'src/utils/utils';
 
 @Injectable()
 export class PeopleService {
-
   people = people;
 
-  getPeople(search?: string, page?: string, pageSize?: string): { items: Array<People>, hasNext: boolean } {
+  getPeople(search?: string, page?: string, pageSize?: string): { items: Array<People>; hasNext: boolean } {
     let filteredPeople = this.filter(search);
     filteredPeople = this.paginate(filteredPeople, parseInt(page, 10), parseInt(pageSize, 10));
 
     return {
       items: filteredPeople,
-      hasNext: this.people.length > (parseInt(pageSize, 10) * parseInt(page, 10))
+      hasNext: this.people.length > parseInt(pageSize, 10) * parseInt(page, 10)
     };
   }
 
@@ -49,7 +48,7 @@ export class PeopleService {
 
   private paginate(filteredPeople, page?: number, pageSize?: number) {
     if (pageSize || page) {
-     return Utils.paginate(filteredPeople, page, pageSize);
+      return Utils.paginate(filteredPeople, page, pageSize);
     }
 
     return this.people;
@@ -58,5 +57,4 @@ export class PeopleService {
   private filter(search?: string) {
     return search ? Utils.filterByAll(search, this.people) : this.people;
   }
-
 }

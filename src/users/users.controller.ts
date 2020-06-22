@@ -11,14 +11,11 @@ import { ValidateCodeSmsDto } from './dto/validate-code-sms.dto';
 import { PasswordRecoveryDto } from './dto/password-recovery.dto';
 import { ValidateCodeSmsResponseDto } from './dto/validate-code-sms-response.dto';
 
-import {
-  SMS_SUCCESS as smsSuccess,
-} from './password-recovery.data';
+import { SMS_SUCCESS as smsSuccess } from './password-recovery.data';
 
 @ApiTags('users')
 @Controller('users')
 export class UsersController {
-
   constructor(
     private readonly passwordRecoveryService: PasswordRecoveryService,
     private readonly authenticationService: AuthenticationService
@@ -29,11 +26,15 @@ export class UsersController {
   @ApiResponse({ status: 404, description: 'Invalid number, type again' })
   @ApiQuery({ name: 'type', required: false, enum: PasswordRecoveryType })
   @Post()
-  async passwordRecovery(@Query('type') type, @Body() passwordRecoveryDto: PasswordRecoveryDto, @Res() response: Response) {
+  async passwordRecovery(
+    @Query('type') type,
+    @Body() passwordRecoveryDto: PasswordRecoveryDto,
+    @Res() response: Response
+  ) {
     const passwordRecovery = await this.passwordRecoveryService.passwordRecovery(type, passwordRecoveryDto);
     const successStatus = this.passwordRecoveryService.setStatusCode(type);
 
-    response.status(successStatus).send(passwordRecovery)
+    response.status(successStatus).send(passwordRecovery);
   }
 
   @ApiResponse({ status: 200, type: ValidateCodeSmsResponseDto })
@@ -42,7 +43,7 @@ export class UsersController {
   async smsValidation(@Body() codeSmsToValidate: ValidateCodeSmsDto, @Res() response: Response) {
     const smsValidation = await this.passwordRecoveryService.smsValidation(codeSmsToValidate);
 
-    response.status(200).send(smsValidation)
+    response.status(200).send(smsValidation);
   }
 
   @Post('authentication')

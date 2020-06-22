@@ -5,6 +5,6 @@ import { SampleSelectService } from './sample-select.service';
 @Module({
   imports: [],
   controllers: [SampleSelectController],
-  providers: [SampleSelectService],
+  providers: [SampleSelectService]
 })
 export class SampleSelectModule {}

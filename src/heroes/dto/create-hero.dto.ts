@@ -1,7 +1,6 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateHeroDto {
-
   @ApiProperty()
   readonly value: number;
 
@@ -13,5 +12,4 @@ export class CreateHeroDto {
 
   @ApiProperty()
   readonly email: string;
-
 }

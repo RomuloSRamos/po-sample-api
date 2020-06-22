@@ -51,8 +51,7 @@ export const SMS_VALIDATION_SUCCESS = {
   urlChangePassword: 'https://po-ui.io/documentation/po-page-change-password'
 };
 
-
-export const SMS_VALIDATION_ERROR = { 
+export const SMS_VALIDATION_ERROR = {
   code: '400',
   message: 'Invalid Sms code, type again'
 };

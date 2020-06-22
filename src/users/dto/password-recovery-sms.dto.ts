@@ -1,7 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class PasswordRecoverySmsDto {
-
   @ApiProperty()
   hash: string;
 

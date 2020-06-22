@@ -1,9 +1,8 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class CreateSchedulerDto {
-
   @ApiPropertyOptional()
-  daily: { hour: number, minute: number };
+  daily: { hour: number; minute: number };
 
   @ApiPropertyOptional()
   executionParameter: object;
@@ -12,7 +11,7 @@ export class CreateSchedulerDto {
   firstExecution: string;
 
   @ApiPropertyOptional()
-  monthly: { day: number, hour: number, minute: number };
+  monthly: { day: number; hour: number; minute: number };
 
   @ApiProperty()
   processID: string;
@@ -21,6 +20,5 @@ export class CreateSchedulerDto {
   recurrent: boolean;
 
   @ApiPropertyOptional()
-  weekly: { daysOfWeek: Array<string>, hour: number, minute: number };
-
+  weekly: { daysOfWeek: Array<string>; hour: number; minute: number };
 }

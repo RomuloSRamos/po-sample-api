@@ -6,7 +6,6 @@ import { Hero } from './interfaces/hero.interface';
 
 @Injectable()
 export class HeroesService {
-
   heroes = HEROES;
 
   add(hero: Hero): Promise<any> {
@@ -26,7 +25,7 @@ export class HeroesService {
       }
 
       this.heroes.splice(index, 1);
-      resolve({message: 'Hero removido com sucesso'});
+      resolve({ message: 'Hero removido com sucesso' });
     });
   }
 
@@ -42,8 +41,8 @@ export class HeroesService {
     if (heroes.length === 0) {
       throw new HttpException(noDataFound, HttpStatus.NOT_FOUND);
     }
-    
-    return Promise.resolve({ items: heroes, hasNext: this.heroes.length > pageSize});
+
+    return Promise.resolve({ items: heroes, hasNext: this.heroes.length > pageSize });
   }
 
   getByLabel(name: string): Promise<Hero> {
@@ -99,11 +98,11 @@ export class HeroesService {
 
   private sort(heroes: Array<Hero>, order: string): Array<Hero> {
     return heroes.sort((value, previousValue) =>
-      (value[order] > previousValue[order]) ? 1 : ((previousValue[order] > value[order]) ? -1 : 0));
+      value[order] > previousValue[order] ? 1 : previousValue[order] > value[order] ? -1 : 0
+    );
   }
 
   private paginate(heroes: Array<Hero>, page: number = 1, pageSize: number): Array<Hero> {
     return heroes.slice((page - 1) * pageSize, page * pageSize);
   }
-
 }

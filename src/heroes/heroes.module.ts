@@ -5,6 +5,6 @@ import { HeroesService } from './heroes.service';
 @Module({
   imports: [],
   controllers: [HeroesController],
-  providers: [HeroesService],
+  providers: [HeroesService]
 })
-export class HeroesModule { }
+export class HeroesModule {}
